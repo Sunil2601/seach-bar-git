@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="search-bar d-flex justify-content-between mt-2 bg-dark text-light p-3">
+    <label for="">Enter a book name</label>
+    <input [formControl]="query"  type="text" class="w-100" id="">
+    <button class="btn btn-dark ms-2" (click)="onSearch()"><i class="fa-solid fa-magnifying-glass"></i></button>
+  </div>
+  <div class="search-bar-results">
+    <h3 class="mt-2 mb-2 text-center">{{noOfResults}}</h3>
+    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1" *ngIf="results.length>0">
+      <app-book-card  *ngFor="let book of results" [book]="book" class="col mb-4">
+      </app-book-card>
+    </div>
+  </div>
+</div>
